@@ -1,0 +1,21 @@
+<section class="panel panel-info">
+	<div class="panel-heading">
+    	<h3 class="panel-title">{{currentArtist.name}}</h3>
+	</div>
+	<div class="panel-body">
+    	<!-- <pre>{{currentArtist| json}}</pre> -->
+    	<div class="row"> 
+			<div class="col-md-2">
+				<img ng-src="images/{{currentArtist.shortname}}_tn.jpg" alt="Photo of {{currentArtist.name}}" class="img-circle">
+			</div>
+			<div class="col-md-10"> 
+				<h4 class="list-group-item-heading">{{currentArtist.name }}</h4>
+				<h5 class="list-group-item-heading">{{currentArtist.reknown | uppercase}}</h5>
+				<p>{{currentArtist.bio}}</p>
+				
+				<a href="/details/{{prevArtist}}" class="btn btn-warning btn-xs"> &lt; Previous Artist</a>
+				<a href="/details/{{nextArtist}}" class="btn btn-warning btn-xs"> Next Artist &gt;</a>
+			</div>
+    	</div>
+	</div>
+</section>

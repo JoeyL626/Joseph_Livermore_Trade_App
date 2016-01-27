@@ -1,0 +1,24 @@
+<div>
+	<a href="#/" ng-click="authObj.$unauth()">Logout</a></br>
+	<a href="#/addPosts" >Make a Post</a></br>
+	<a href="#/addWtb" >Make a Want to Buy Ad</a>
+
+	<ul ng-repeat="n in posts">
+  <li>{{n.name}}</li>
+  <li>{{n.description}}</li>
+  <li><form ng-submit="editTrade($index)">
+	<input type="text" ng-model="n.price" placeholder={{n.price}} id="price" autofocus><button type="submit">edit</button></form></li>
+  <li>{{n.location}}</li>
+  <li><a ng-click="removeTrade($index)">Delete</a>
+	</ul>
+
+	<ul ng-repeat="m in wtbs">
+  <li>{{m.name}}</li>
+  <li>{{m.description}}</li>
+  <li><form ng-submit="editWtb($index)">
+	<input type="text" ng-model="m.price" placeholder={{m.price}} id="price" autofocus><button type="submit">edit</button></form></li>
+  <li>{{m.location}}</li>
+  <li><a ng-click="removeWtb($index)">Delete</a>
+	</ul>
+
+</div>

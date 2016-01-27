@@ -1,0 +1,42 @@
+.list-group-item-text {
+	color: #555;
+}
+
+h5.list-group-item-heading {
+	color: #FF974F;
+}
+.list-group-item .img-circle {
+	height: 80px;
+	width: 80px;
+}
+
+.list-group-item {
+	opacity: 0.9;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.list-group-item:hover {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d4e4ef+0,86aecc+100;Grey+Gloss */
+	background: #d4e4ef; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #d4e4ef 0%, #86aecc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#d4e4ef), color-stop(100%,#86aecc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #d4e4ef 0%,#86aecc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #d4e4ef 0%,#86aecc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #d4e4ef 0%,#86aecc 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #d4e4ef 0%,#86aecc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	opacity: 1;
+	-webkit-transform: scale(1.05);	
+	-moz-transform: scale(1.05);	
+	-o-transform: scale(1.05);	
+	transform: scale(1.05);
+	z-index: 1;
+}
+
+.list-group-item:hover a {
+	text-decoration: none;	
+}
