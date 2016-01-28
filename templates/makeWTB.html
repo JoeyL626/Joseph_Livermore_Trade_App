@@ -1,11 +1,14 @@
 <div>
+<a href="#/" ng-click="authObj.$unauth()">Logout</a></br>
+	<a href="#/addPosts" >Make a Post</a></br>
+  <a href="#/posts" >Make a Want to Buy Ad</a>
 	<h1>WTB</h1>
 	<form ng-submit="WtbAdd()">
 		<label for="wtb-name">Item Name</label>
 		<input type="text" ng-model="wtb.name" placeholder="Search Here" id="wtb-name" autofocus>
-		<label for="wtb-decription">Description</label>
+		<label for="wtb-decription">Condition 1-10</label>
 		<input type="text" ng-model="wtb.description" placeholder="Search Here" id="wtb-description" autofocus>
-		<label for="wtb-price">Price</label>
+		<label for="wtb-price">Willing to Pay</label>
 		<input type="text" ng-model="wtb.price" placeholder="Search Here" id="wtb-price" autofocus>
 		<label for="wtb-location">Location</label>
 		<input type="text" ng-model="wtb.location" placeholder="Search Here" id="wtb-location" autofocus>
