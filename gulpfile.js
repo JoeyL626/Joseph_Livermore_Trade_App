@@ -17,7 +17,7 @@ gulp.task('js:build', function () {
 })
 
 gulp.task('sass:build', function () {
-  return gulp.src(['./scss/**/*.scss'])
+  return gulp.src(['public/bower/foundation/scss','./scss/**/*.scss'])
     .pipe(gulp.dest('./public/css'))
 })
 
