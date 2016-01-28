@@ -1,5 +1,5 @@
 angular.module('myapp')
-.controller('HomeCtrl', ["$scope", "$http", "$firebaseArray", "$firebaseAuth", "$location", function ($scope, $http, $firebaseArray, $firebaseAuth, $location) {
+.controller('HomeCtrl', ["$scope", "$http", "$firebaseArray", "$firebaseObject", "$firebaseAuth", "$location", function ($scope, $http, $firebaseArray, $firebaseObject, $firebaseAuth, $location) {
 
 	var authURL = "stufftraderapp.firebaseIO.com";
 	var URL = "stufftraderapp.firebaseIO.com/";
@@ -22,15 +22,8 @@ angular.module('myapp')
 
 		}).then(function(authData) {
 		 	
-		 	
-			var list = $firebaseArray(new Firebase(URL +"users/"+ authData.auth.uid));
-			$scope.users = list;
-		  
-		  list.$add($scope.user).then(function(ref){
-				var id = ref.key();
-				console.log("added record with id " + id);
-				list.$indexFor(id);
-			});
+		 	var userRef = new Firebase(URL +"users/"+ authData.auth.uid);
+		  userRef.set($scope.user);
 
 			$location.path("/posts");
 		
@@ -56,24 +49,36 @@ angular.module('myapp')
 			
 	}
 
+
+
 	$scope.authObj.$onAuth(function(authData) {
   
   if (authData) {
     console.log("Logged in as:", authData.uid);
+
+  var user = $firebaseObject(new Firebase(URL +"users/"+ authData.auth.uid));
+	$scope.users = user;
   
 
-	$scope.removeUser = function (index) {
-          console.log("index", index);
-     list.$remove(list[index]).then(function(ref){
-       ref.key() === list.$id; // true
-     });
-  }
+	$scope.deleteUser = function(){
 
-  $scope.editUser = function (index) {
-     console.log("index", index);
-     list.$save(list[index]).then(function(ref) {
-       ref.key() === list[2].$id; // true
-     });
+  console.log("hello", user);
+  $scope.authObj.$removeUser($scope.remove).then(function(authData) {
+
+  user.$remove();
+  console.log("User removed successfully!");
+	
+	}).catch(function(error) {
+  
+  console.error("Error: ", error);
+	
+	});
+	
+	}
+
+
+  $scope.editUser = function () {
+     user.$save()
 
   }
 

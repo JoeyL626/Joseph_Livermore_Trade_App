@@ -18,5 +18,13 @@ angular.module('myapp')
 		templateUrl: 'views/makeWTB.html',
 		controller: 'HomeCtrl'
 	})
+	.when('/user', {
+		templateUrl: 'views/user.html',
+		controller: 'HomeCtrl'
+	})
+	.when('/deleteAccount', {
+		templateUrl: 'views/delete.html',
+		controller: 'HomeCtrl'
+	})
 	.otherwise({redirectTo:'/'});
 })

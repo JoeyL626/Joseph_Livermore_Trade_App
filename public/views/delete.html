@@ -1,0 +1,12 @@
+<div>
+	<h1>Delete</h1>
+	<form ng-submit="deleteUser()">
+		<label for="remove-email">Email</label>
+		<input type="text" ng-model="remove.email" placeholder="Search Here" id="remove-email" autofocus>
+		<label for="remove-password">Password</label>
+		<input type="text" ng-model="remove.password" placeholder="Search Here" id="remove-password" autofocus>
+		<button type="submit">submit</button>	
+	</form>	
+  <a href="#/" ng-click="authObj.$unauth()">Logout</a>
+
+</div>

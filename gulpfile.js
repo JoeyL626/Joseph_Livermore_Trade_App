@@ -16,6 +16,11 @@ gulp.task('js:build', function () {
     .pipe(gulp.dest('./public/js'))
 })
 
+gulp.task('sass:build', function () {
+  return gulp.src(['./scss/**/*.scss'])
+    .pipe(gulp.dest('./public/css'))
+})
+
 gulp.task('html:move', function () {
   return gulp.src(['./templates/**/*.html'])
     .pipe(gulp.dest('./public/views'))

@@ -1,16 +1,27 @@
 <div>
 	<a href="#/" ng-click="authObj.$unauth()">Logout</a></br>
-	<a href="#/addPosts" >Make a Post</a></br>
-	<a href="#/addWtb" >Make a Want to Buy Ad</a>
-  <a href="#/posts" >Make a Want to Buy Ad</a>
+  <a href="#/addPosts" >Make a Post</a></br>
+  <a href="#/addWtb" >Make a Want to Buy Ad</a></br>
+  <a href="#/posts" >Posts</a></br>
+  <a href="#/user" >Profile</a>
 
-	<ul ng-repeat="n in posts">
-  <li>{{n.name}}</li>
-  <li>{{n.description}}</li>
-  <li><form ng-submit="editTrade($index)">
-	<input type="text" ng-model="n.price" placeholder={{n.price}} id="price" autofocus><button type="submit">edit</button></form></li>
-  <li>{{n.location}}</li>
-  <li><a ng-click="removeTrade($index)">Delete</a>
+	<ul>
+  <li>{{users.fname}}</li>
+  <li>{{users.lname}}</li>
+  <li>{{users.email}}</li>
+  <li>{{users.adress}}</li>
+  <li>{{users.city}}</li>
+  <li>{{users.state}}</li>
+  <li>{{users.zip}}</li>
+  <li><form ng-submit="editUser()">
+  <input type="text" ng-model="users.adress" placeholder={{users.adress}} id="price" autofocus><button type="submit">edit</button></form></li>
+  <li><form ng-submit="editUser()">
+  <input type="text" ng-model="users.city" placeholder={{users.city}} id="price" autofocus><button type="submit">edit</button></form></li>
+  <li><form ng-submit="editUser()">
+  <input type="text" ng-model="users.state" placeholder={{users.state}} id="price" autofocus><button type="submit">edit</button></form></li>
+  <li><form ng-submit="editUser()">
+  <input type="text" ng-model="users.zip" placeholder={{users.zip}} id="price" autofocus><button type="submit">edit</button></form></li>
+  <li><a href="#/deleteAccount">Delete</a>
 	</ul>
 
 </div>
